@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_09_231053) do
+ActiveRecord::Schema.define(version: 2019_08_09_232517) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -24,6 +24,16 @@ ActiveRecord::Schema.define(version: 2019_08_09_231053) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "talks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "content"
+    t.bigint "user_id"
+    t.bigint "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_talks_on_category_id"
+    t.index ["user_id"], name: "index_talks_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -48,4 +58,6 @@ ActiveRecord::Schema.define(version: 2019_08_09_231053) do
   end
 
   add_foreign_key "categories", "genres"
+  add_foreign_key "talks", "categories"
+  add_foreign_key "talks", "users"
 end
