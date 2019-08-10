@@ -1,0 +1,27 @@
+%h1 WELCOME
+%h2 好きなグループに参加しよう
+
+%h3 グループ一覧
+%ul
+  - @genres.each do |genre|
+    %li
+      = genre.name
+
+%h3 グループを作る！
+%p 上記ジャンルから選ぶ！
+= form_for @category do |f|
+  = f.collection_select :genre_id, @genres, :id, :name, {prompt: '---'}
+  = f.label :name
+  = f.text_field :name, placeholder: "カテゴリ名"
+  = f.submit :作成
+
+%p ジャンルを作る！
+= form_for @genre do |f|
+  = f.label :name
+  = f.text_field :name, placeholder: "ジャンル名"
+  = f.submit :作成
+= form_for @category do |f|
+  = f.collection_select :genre_id, @genres, :id, :name, {prompt: '---'}
+  = f.label :name
+  = f.text_field :name, placeholder: "カテゴリ名"
+  = f.submit :作成
