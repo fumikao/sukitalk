@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  
   def create
     category = Category.new(category_params)
     if category.save
@@ -7,6 +8,10 @@ class CategoriesController < ApplicationController
     else
       render 'genre/index'
     end
+  end
+
+  def show
+    @talks = Talk.where(category_id: params[:id])
   end
 
   private

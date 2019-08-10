@@ -6,6 +6,10 @@
   - @genres.each do |genre|
     %li
       = genre.name
+%ul
+  - @categories.each do |category|
+    %li
+      = link_to category.name, category_path(category)
 
 %h3 グループを作る！
 %p 上記ジャンルから選ぶ！

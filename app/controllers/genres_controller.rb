@@ -2,6 +2,7 @@ class GenresController < ApplicationController
   def index
     @genres = Genre.all
     @genre = Genre.new
+    @categories = Category.all
     @category = Category.new
   end
 
