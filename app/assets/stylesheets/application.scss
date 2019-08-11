@@ -21,6 +21,14 @@
 @import "header";
 @import "genre";
 
+:root {
+  --color-pink: rgba(246,194,194,1);
+  --color-yellow: rgba(249,251,186,1);
+  --color-blue: rgba(212,237,244,1);
+  --color-green: rgba(226,242,213,1);
+  --color-navy: rgba(58,64,90,1);
+}
+
 * {
   font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
   box-sizing: border-box;
@@ -28,7 +36,7 @@
 }
 
 a {
-  color: #3A405A;
+  color: var(--color-navy);
   text-decoration: none;
   &:hover {
     opacity: 0.7;

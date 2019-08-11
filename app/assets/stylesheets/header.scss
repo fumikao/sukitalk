@@ -1,7 +1,7 @@
 header {
   width: 100vw;
   height: 70px;
-  background: #f6c2c2;
+  background: var(--color-pink);
   display: flex;
   justify-content: center;
   position: fixed;
@@ -25,7 +25,7 @@ header {
   height: 50px;
   margin: 10px;
   border-radius: 50%;
-  background: #f9fbba;
+  background: var(--color-yellow);
   text-align: center;
   i, p {
     line-height: 50px;
