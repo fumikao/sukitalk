@@ -8,7 +8,29 @@
 
 .top-group__index {
   margin-top: 30px;
-  display: flex;
+  p {
+    font-size: 24px;
+    text-align: center;
+  }
+  &--choose {
+    margin-top: 20px;
+    display: flex;
+    label {
+      display: inline-block;
+      margin: 10px 0 5px;
+    }
+    .input-text {
+      padding: 10px;
+      height: 28px;
+    }
+    .input-submit {
+      background: var(--color-yellow);
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+    }
+  }
 }
 
 .top-genre {
@@ -25,29 +47,12 @@
   width: 50%;
 }
 
-.top-group__new {
-  margin-top: 30px;
-  display: flex;
-  &--genre {
+.top-new {
+  &-genre {
     width: 50%;
   }
-  &--category {
+  &-category {
     width: 50%;
-  }
-  label {
-    display: inline-block;
-    margin: 10px 0 5px;
-  }
-  .input-text {
-    padding: 10px;
-    height: 28px;
-  }
-  .input-submit {
-    background: var(--color-yellow);
-    border-radius: 50%;
-    width: 32px;
-    height: 32px;
-    cursor: pointer;
   }
 }
 

@@ -3,48 +3,51 @@
   %p スキなだけ、話そう！
 %hr
 .top-group__index
-  .top-genre
-    .contents-title
-      ジャンル一覧
-    .contents-title-sub
-      クリックするとカテゴリが表示されます
-    %ul
-      - @genres.each do |genre|
-        %li.genre_name{data: {id: genre.id}}
-          = genre.name
-  .top-category
-    .contents-title
-      カテゴリー一覧
-    .contents-title-sub
-      クリックするとカテゴリのトークルームに移動します
-    %ul#category_area
+  %p どのグループに参加する？
+  .top-group__index--choose
+    .top-genre
+      .contents-title
+        (1)ジャンルを選ぶ
+      .contents-title-sub
+        クリックするとカテゴリが表示されます
+      %ul
+        - @genres.each do |genre|
+          %li.genre_name{data: {id: genre.id}}
+            = genre.name
+    .top-category
+      .contents-title
+        (2)グループを選ぶ
+      .contents-title-sub
+        クリックするとカテゴリのトークルームに移動します
+      %ul#category_area
 %hr
-.top-group__new
-  .top-group__new--genre
-    .contents-title ジャンルから作る！
-    = form_for @genre do |f|
-      = f.label "(1)ジャンル作成"
-      %br
-      = f.text_field :name, placeholder: "ジャンル名", class: "input-text"
-      = f.submit "＋", class: "input-submit"
-    = form_for @category do |f|
-      = f.label "(2)ジャンル選択"
-      %br
-      = f.collection_select :genre_id, @genres, :id, :name, {prompt: '---'}
-      %br
-      = f.label "(3)カテゴリ作成"
-      %br
-      = f.text_field :name, placeholder: "カテゴリ名", class: "input-text"
-      = f.submit "＋", class: "input-submit"
-  .top-group__new--category
-    .contents-title カテゴリーを作る！
-    = form_for @category do |f|
-      = f.label "(1)ジャンル選択"
-      %br
-      = f.collection_select :genre_id, @genres, :id, :name, {prompt: '---'}
-      %br
-      = f.label "(2)カテゴリ作成"
-      %br
-      = f.text_field :name, placeholder: "カテゴリ名", class: "input-text"
-      = f.submit "＋", class: "input-submit"
-
+.top-group__index
+  %p 新しくグループを作る！
+  .top-group__index--choose
+    .top-new-genre
+      .contents-title ジャンルから作る！
+      = form_for @genre do |f|
+        = f.label "(1)ジャンル作成"
+        %br
+        = f.text_field :name, placeholder: "ジャンル名", class: "input-text"
+        = f.submit "＋", class: "input-submit"
+      = form_for @category do |f|
+        = f.label "(2)ジャンル選択"
+        %br
+        = f.collection_select :genre_id, @genres, :id, :name, {prompt: '---'}
+        %br
+        = f.label "(3)カテゴリ作成"
+        %br
+        = f.text_field :name, placeholder: "カテゴリ名", class: "input-text"
+        = f.submit "＋", class: "input-submit"
+    .top-new-category
+      .contents-title カテゴリーを作る！
+      = form_for @category do |f|
+        = f.label "(1)ジャンル選択"
+        %br
+        = f.collection_select :genre_id, @genres, :id, :name, {prompt: '---'}
+        %br
+        = f.label "(2)カテゴリ作成"
+        %br
+        = f.text_field :name, placeholder: "カテゴリ名", class: "input-text"
+        = f.submit "＋", class: "input-submit"
