@@ -1,3 +1,59 @@
-// Place all the styles related to the genre controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.top-message {
+  padding-top: 20px;
+  p {
+    text-align: center;
+    font-size: 24px;
+  }
+}
+
+.top-group__index {
+  margin-top: 30px;
+  display: flex;
+}
+
+.top-genre {
+  width: 50%;
+  li {
+    cursor: pointer;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+.top-category {
+  width: 50%;
+}
+
+.top-group__new {
+  margin-top: 30px;
+  display: flex;
+  &--genre {
+    width: 50%;
+  }
+  &--category {
+    width: 50%;
+  }
+  label {
+    display: inline-block;
+    margin: 10px 0 5px;
+  }
+  .input-text {
+    padding: 10px;
+    height: 28px;
+  }
+  .input-submit {
+    background: #f9fbba;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.contents-title {
+  font-size: 20px;
+  text-decoration: underline dotted rgba(58,64,90,1);
+  &-sub {
+    font-size: 8px;
+  }
+}

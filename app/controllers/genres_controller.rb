@@ -2,7 +2,6 @@ class GenresController < ApplicationController
   def index
     @genres = Genre.all
     @genre = Genre.new
-    @categories = Category.all
     @category = Category.new
   end
 
@@ -15,6 +14,10 @@ class GenresController < ApplicationController
     else
       render 'index'
     end
+  end
+
+  def display_categories
+    @categories = Category.where(genre_id: params[:genre_id])
   end
 
   private
