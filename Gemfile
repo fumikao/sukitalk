@@ -68,3 +68,5 @@ gem 'rails-i18n'
 gem 'haml-rails'
 gem 'font-awesome-sass'
 gem 'pry-rails'
+
+gem 'gon'
