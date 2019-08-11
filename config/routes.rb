@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root "genres#index"
   resources :users, only: [:index, :show]
   resources :genres
-  resources :categories
-  resources :talks
+  resources :categories do
+    resources :talks
+  end
 end
