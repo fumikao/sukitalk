@@ -9,10 +9,6 @@
 .top-group__index {
   margin-top: 30px;
   display: flex;
-  li:before {
-    font-family: FontAwesome;
-    content: '\f061';
-  }
 }
 
 .top-genre {
@@ -57,4 +53,7 @@
 .contents-title {
   font-size: 20px;
   text-decoration: underline dotted rgba(58,64,90,1);
+  &-sub {
+    font-size: 8px;
+  }
 }
