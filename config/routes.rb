@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show]
   resources :genres
   resources :categories do
-    resources :talks
+    resources :talks, except: [:new]
   end
+  resources :talks, only: :new
 end
