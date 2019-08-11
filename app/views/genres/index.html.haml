@@ -4,17 +4,20 @@
 %hr
 .top-group__index
   .top-genre
-    .contents-title ジャンル一覧
+    .contents-title
+      ジャンル一覧
+    .contents-title-sub
+      クリックするとカテゴリが表示されます
     %ul
       - @genres.each do |genre|
-        %li
+        %li.genre_name{data: {id: genre.id}}
           = genre.name
   .top-category
-    .contents-title カテゴリー一覧
-    %ul
-      - @categories.each do |category|
-        %li
-          = link_to category.name, category_talks_path(category)
+    .contents-title
+      カテゴリー一覧
+    .contents-title-sub
+      クリックするとカテゴリのトークルームに移動します
+    %ul#category_area
 %hr
 .top-group__new
   .top-group__new--genre
