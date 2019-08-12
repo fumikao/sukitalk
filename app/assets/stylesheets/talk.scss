@@ -1,0 +1,17 @@
+.talk-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  &__category {
+    span {
+      font-size: 24px;
+    }
+  }
+  &__join {
+    background: var(--color-green);
+    border-radius: 30px;
+    padding: 10px;
+    a {
+    }
+  }
+}

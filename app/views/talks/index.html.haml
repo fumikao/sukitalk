@@ -1,0 +1,10 @@
+.talk-title
+  .talk-title__category
+    %span
+      = @category.name
+    のスキトーク！
+    メンバー：○人
+  .talk-title__join
+    = link_to "参加する！", "#"
+
+= render @talks
