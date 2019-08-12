@@ -12,4 +12,7 @@ Rails.application.routes.draw do
     resources :talks, except: [:new]
   end
   resources :talks, only: :new
+
+  post '/category_users' => "category_users#create"
+  delete '/category_users' => "category_users#destroy"
 end
