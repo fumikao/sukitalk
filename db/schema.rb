@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_09_232517) do
+ActiveRecord::Schema.define(version: 2019_08_12_072311) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -18,6 +18,15 @@ ActiveRecord::Schema.define(version: 2019_08_09_232517) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["genre_id"], name: "index_categories_on_genre_id"
+  end
+
+  create_table "category_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "category_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_category_users_on_category_id"
+    t.index ["user_id"], name: "index_category_users_on_user_id"
   end
 
   create_table "genres", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -58,6 +67,8 @@ ActiveRecord::Schema.define(version: 2019_08_09_232517) do
   end
 
   add_foreign_key "categories", "genres"
+  add_foreign_key "category_users", "categories"
+  add_foreign_key "category_users", "users"
   add_foreign_key "talks", "categories"
   add_foreign_key "talks", "users"
 end

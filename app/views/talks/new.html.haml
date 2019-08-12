@@ -1,0 +1,6 @@
+= form_for @talk do |f|
+  = f.collection_select :category_id, @select_lists, :id, :name, {prompt: '---'}
+  %br
+  = f.text_area :content
+  %br
+  = f.submit "投稿"

@@ -9,7 +9,10 @@ Rails.application.routes.draw do
     end
   end
   resources :categories do
-    resources :talks, except: [:new]
+    resources :talks, only: :index
   end
-  resources :talks, only: :new
+  resources :talks, except: :index
+
+  post '/category_users' => "category_users#create"
+  delete '/category_users' => "category_users#destroy"
 end

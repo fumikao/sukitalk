@@ -1,0 +1,18 @@
+.talk-title
+  .talk-title__category
+    %span
+      = @category.name
+    のスキトーク！
+    メンバー：
+    = @category.category_users.length
+    人
+  .talk-title__join
+    - if user_signed_in?
+      - if CategoryUser.find_by(category_id: @category.id, user_id: current_user.id)
+        = link_to "参加をやめる", category_users_path(category_id: @category.id), method: :delete
+      - else
+        = link_to "参加する！", category_users_path(category_id: @category.id), method: :post
+    - else
+      = link_to "参加する！", new_user_session_path
+
+= render @talks
