@@ -1,0 +1,33 @@
+// TODO: 高さの指定考える必要あり。bottom-contentが浮いてるので。
+.comment__index {
+  margin-top: 20px;
+  height: 60%;
+  &--title {
+    font-size: 20px;
+  }
+  &--comments {
+    margin-top: 10px;
+    height: 100%;
+    overflow: scroll;
+  }
+}
+
+.bottom-content {
+  width: 90%;
+  height: 100px;
+  position: absolute;
+  bottom: 10px;
+  text-align: right;
+}
+
+.comment__new {
+  padding-top: 20px;
+  display: flex;
+  &--area {
+    width: 100%;
+    textarea {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

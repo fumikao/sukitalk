@@ -1,9 +1,14 @@
 .talk-content
-  .talk-content__head
-    %p
-      = link_to talk.user.nickname, user_path(talk.user)
-    %p
+  .left-content
+    .left-content__head
+      %p
+        = link_to talk.user.nickname, user_path(talk.user)
+    = link_to talk_path(talk) do
+      .left-content__text
+        = simple_format(talk.content)
+  .right-content
+    .right-content__head
       = talk.created_at.strftime("%Y/%m/%-d %-H:%M")
-  = link_to talk_path(talk) do
-    .talk-content__text
-      = simple_format(talk.content)
+    .right-conent__list
+      コメント：
+      = talk.comments.length

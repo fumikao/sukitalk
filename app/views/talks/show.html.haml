@@ -1,13 +1,26 @@
+.back-link
+  = link_to "トークに戻る", category_talks_path(@talk.category)
+
 = render @talk
 
 .comment__index
   .comment__index--title
-    コメント一覧
+    コメント(
+    = @talk.comments.length
+    )
+  .comment__index--comments
+    - @talk.comments.each do |comment|
+      .talk-content
+        .talk-content__head
+          %p
+            = link_to comment.user.nickname, user_path(comment.user)
+          %p
+            = comment.created_at.strftime("%Y/%m/%-d %-H:%M")
+        .talk-content__text
+          = simple_format(comment.content)
 
 .bottom-content
-  = link_to "トークに戻る", category_talks_path(@talk.category)
-
-  = form_for @talk do |f|
+  = form_for [@talk, @comment] do |f|
     .comment__new
       .comment__new--area
         = f.text_area :content
