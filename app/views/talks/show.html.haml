@@ -9,8 +9,8 @@
     = @talk.comments.length
     )
   .comment__index--comments
-    .talk-content
-      - @talk.comments.each do |comment|
+    - @talk.comments.each do |comment|
+      .talk-content
         .left-content
           .left-content__head
             %p
