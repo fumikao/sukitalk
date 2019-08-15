@@ -1,0 +1,15 @@
+= render @talk
+
+.comment__index
+  .comment__index--title
+    コメント一覧
+
+.bottom-content
+  = link_to "トークに戻る", category_talks_path(@talk.category)
+
+  = form_for @talk do |f|
+    .comment__new
+      .comment__new--area
+        = f.text_area :content
+      .comment__new--submit
+        = f.submit :コメント
