@@ -9,15 +9,19 @@
     = @talk.comments.length
     )
   .comment__index--comments
-    - @talk.comments.each do |comment|
-      .talk-content
-        .talk-content__head
-          %p
-            = link_to comment.user.nickname, user_path(comment.user)
-          %p
+    .talk-content
+      - @talk.comments.each do |comment|
+        .left-content
+          .left-content__head
+            %p
+              = link_to comment.user.nickname, user_path(comment.user)
+          .left-content__text
+            = simple_format(comment.content)
+        .right-content
+          .right-content__head
             = comment.created_at.strftime("%Y/%m/%-d %-H:%M")
-        .talk-content__text
-          = simple_format(comment.content)
+          .right-conent__list
+            = icon 'fas', 'star'
 
 .bottom-content
   = form_for [@talk, @comment] do |f|
