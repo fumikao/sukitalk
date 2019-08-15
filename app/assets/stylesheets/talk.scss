@@ -1,3 +1,14 @@
+.back-link {
+  a {
+    display: inline-block;
+    width: 100px;
+    line-height: 30px;
+    border-radius: 30px;
+    background: var(--color-yellow);
+    text-align: center;
+  }
+}
+
 .talk-title {
   display: flex;
   justify-content: space-between;
@@ -18,8 +29,13 @@
 }
 
 .talk-content {
+  display: flex;
+  justify-content: space-between;
   padding: 10px;
   border-bottom: 1px solid var(--color-green);
+}
+
+.left-content {
   &__head {
     display: flex;
     justify-content: space-between;
@@ -27,4 +43,12 @@
   &__text {
     margin-top: 5px;
   }
+}
+
+.right-content {
+
+}
+
+.sub-content {
+  margin-top: 10px;
 }
