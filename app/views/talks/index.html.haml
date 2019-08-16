@@ -2,10 +2,8 @@
   .talk-title__category
     %span
       = @category.name
-    のスキトーク！
-    メンバー：
+    = icon 'fas', 'users'
     = @category.category_users.length
-    人
   .talk-title__join
     - if user_signed_in?
       - if CategoryUser.find_by(category_id: @category.id, user_id: current_user.id)
