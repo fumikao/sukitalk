@@ -28,6 +28,10 @@ header {
   border-radius: 50%;
   background: var(--color-yellow);
   text-align: center;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.7;
+  }
   i, p {
     line-height: 50px;
   }

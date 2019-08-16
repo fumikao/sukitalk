@@ -17,9 +17,8 @@
           = link_to user_path(current_user) do
             .links__link
               = icon 'fas', 'user'
-          = link_to new_talk_path do
-            .links__link
-              = icon 'fas', 'edit'
+          .links__link#new_talk
+            = icon 'fas', 'edit'
       - else
         .links
           = link_to new_user_registration_path do
@@ -31,3 +30,6 @@
     %main
       .container
         = yield
+      .shadow.display_none
+      .new-talk.display_none
+        = render 'layouts/new_talk'

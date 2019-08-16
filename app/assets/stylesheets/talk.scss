@@ -52,3 +52,19 @@
 .sub-content {
   margin-top: 10px;
 }
+
+.new-talk {
+  z-index: 3;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    &--cancel {
+      cursor: pointer;
+    }
+  }
+}

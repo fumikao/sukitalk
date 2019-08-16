@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :categories do
     resources :talks, only: :index
   end
-  resources :talks, except: :index do
+  resources :talks, except: [:index, :new] do
     resources :comments, only: [:create, :edit, :update, :destroy]
   end
 

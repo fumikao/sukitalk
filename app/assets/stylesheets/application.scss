@@ -51,3 +51,20 @@ li {
 hr {
   margin: 30px 0;
 }
+
+.display_none {
+  display: none;
+}
+
+.shadow {
+  background: var(--color-navy);
+  opacity: 0.3;
+  // TODO: 高さ修正要
+  min-height: 100vh;
+  width: 100vw;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
