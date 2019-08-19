@@ -1,0 +1,25 @@
+.user__name
+  = link_to @user.nickname, edit_user_registration_path
+
+.user__detail
+  - if @user.sex
+    = @user.sex
+    \/
+  - if @user.birthday
+    = @user.birthday
+    \/
+  - if @user.address
+    = @user.address
+
+.user__profile
+  = @user.profile
+
+.user__categories
+  - @categories.each do |category|
+    .user__categories--list{data: {categoryid: category.id}}
+      = category.name
+
+.user__talks
+  - @categories.each do |category|
+    .user__talks--lists.display_none{data: {categoryid: category.id}}
+      = render partial: 'talks/talk', collection: Talk.where(user_id: @user.id, category_id: category.id), as: :talk

@@ -1,0 +1,31 @@
+.user__name {
+  a {
+    font-size: 20px;
+  }
+}
+
+.user__detail {
+  margin-top: 20px;
+  display: flex;
+}
+
+.user__categories {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: wrap;
+  &--list {
+    cursor: pointer;
+  }
+}
+
+.user__talks {
+  margin-top: 20px;
+}
+
+.selected {
+  background: var(--color-yellow);
+  border-radius: 20px;
+  padding: 5px;
+}
