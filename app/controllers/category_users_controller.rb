@@ -1,4 +1,6 @@
 class CategoryUsersController < ApplicationController
+  before_action :authenticate_user!
+
   def create
     CategoryUser.create(category_id: params[:category_id], user_id: current_user.id)
     redirect_to category_talks_path(params[:category_id])

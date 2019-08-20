@@ -1,4 +1,6 @@
 class TalksController < ApplicationController
+  before_action :authenticate_user!, only: :create
+
   def index
     @category = Category.find(params[:category_id])
     @talks = @category.talks.order('id DESC')

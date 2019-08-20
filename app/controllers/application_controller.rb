@@ -11,16 +11,18 @@ class ApplicationController < ActionController::Base
   #   user_path(current_user)
   # end
 
-  # def after_sign_out_path_for(resource)
-  #   root_path
-  # end
+  def after_sign_out_path_for(resource)
+    root_path
+  end
 
   def setting_modal_new
-    @talk = Talk.new
-    @user_categories = CategoryUser.where(user_id: current_user.id)
-    @select_lists = []
-    @user_categories.each do |category_user|
-      @select_lists.push(category_user.category)
+    if user_signed_in?
+      @talk = Talk.new
+      @user_categories = CategoryUser.where(user_id: current_user.id)
+      @select_lists = []
+      @user_categories.each do |category_user|
+        @select_lists.push(category_user.category)
+      end
     end
   end
 end
