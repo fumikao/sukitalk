@@ -1,4 +1,6 @@
 .user__name {
+  display: flex;
+  justify-content: space-between;
   a {
     font-size: 20px;
   }
