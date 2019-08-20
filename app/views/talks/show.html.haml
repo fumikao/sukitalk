@@ -20,8 +20,6 @@
         .right-content
           .right-content__head
             = comment.created_at.strftime("%Y/%m/%-d %-H:%M")
-          .right-conent__list
-            = icon 'fas', 'star'
 
 .bottom-content
   = form_for [@talk, @comment] do |f|
