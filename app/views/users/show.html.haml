@@ -1,6 +1,9 @@
 .user__name
   - if @user == current_user
-    = link_to @user.nickname, edit_user_registration_path
+    .user__name--edit
+      = @user.nickname
+      = link_to edit_user_registration_path do
+        = icon 'fas', 'user-cog'
     = link_to destroy_user_session_path, method: :delete do
       = icon 'fas', 'sign-out-alt'
   - else
@@ -11,13 +14,13 @@
     = @user.sex
     \/
   - if @user.birthday
-    = @user.birthday
+    = birthday_to_age(@user.birthday)
     \/
   - if @user.address
     = @user.address
 
 .user__profile
-  = @user.profile
+  = simple_format(@user.profile)
 
 .user__categories
   - @categories.each do |category|

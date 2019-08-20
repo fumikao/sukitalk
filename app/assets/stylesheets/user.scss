@@ -1,14 +1,20 @@
 .user__name {
   display: flex;
   justify-content: space-between;
-  a {
+  &--edit {
     font-size: 20px;
   }
 }
 
 .user__detail {
-  margin-top: 20px;
+  margin-top: 10px;
   display: flex;
+}
+
+.user__profile {
+  margin-top: 10px;
+  border: 1px solid var(--color-blue);
+  padding: 10px;
 }
 
 .user__categories {
