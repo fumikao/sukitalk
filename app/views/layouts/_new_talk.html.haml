@@ -1,13 +1,14 @@
-.new-talk__head
-  .new-talk__head--title
-    Let's talk !
-  .new-talk__head--cancel
-    = icon 'fas', 'times-circle'
+- if user_signed_in?
+  .new-talk__head
+    .new-talk__head--title
+      Let's talk !
+    .new-talk__head--cancel
+      = icon 'fas', 'times-circle'
 
-.new-talk__content
-  = form_for @talk do |f|
-    = f.collection_select :category_id, @select_lists, :id, :name, {prompt: '---'}
-    %br
-    = f.text_area :content
-    %br
-    = f.submit "投稿"
+  .new-talk__content
+    = form_for @talk do |f|
+      = f.collection_select :category_id, @select_lists, :id, :name, {prompt: '---'}
+      %br
+      = f.text_area :content
+      %br
+      = f.submit "投稿"

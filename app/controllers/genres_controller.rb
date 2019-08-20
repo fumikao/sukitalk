@@ -1,4 +1,6 @@
 class GenresController < ApplicationController
+  before_action :authenticate_user!, only: :create
+
   def index
     @genres = Genre.all
     @genre = Genre.new

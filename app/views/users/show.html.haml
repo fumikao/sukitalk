@@ -1,5 +1,10 @@
 .user__name
-  = link_to @user.nickname, edit_user_registration_path
+  - if @user == current_user
+    = link_to @user.nickname, edit_user_registration_path
+    = link_to destroy_user_session_path, method: :delete do
+      = icon 'fas', 'sign-out-alt'
+  - else
+    = @user.nickname
 
 .user__detail
   - if @user.sex
