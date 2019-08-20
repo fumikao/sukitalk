@@ -16,6 +16,8 @@ Rails.application.routes.draw do
     resources :likes, only: [:create, :destroy]
   end
 
+  get '/search' => 'users#search'
+
   post '/category_users' => "category_users#create"
   delete '/category_users' => "category_users#destroy"
 end

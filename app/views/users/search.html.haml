@@ -1,0 +1,15 @@
+.search-title
+  検索結果
+
+- @users.each do |user|
+  = link_to user_path(user) do
+    .search-result
+      = user.nickname
+      - if user.sex
+        = user.sex
+        \/
+      - if user.birthday
+        = birthday_to_age(user.birthday)
+        \/
+      - if user.address
+        = user.address
