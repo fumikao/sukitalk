@@ -20,6 +20,9 @@
                 = icon 'fas', 'user'
             .links__link#new_talk
               = icon 'fas', 'edit'
+            = link_to users_path do
+              .links__link
+                = icon 'fas', 'search'
         - else
           .links
             = link_to new_user_registration_path do
@@ -28,6 +31,9 @@
             = link_to new_user_session_path do
               .links__link
                 %p login
+            = link_to users_path do
+              .links__link
+                = icon 'fas', 'search'
       - if user_signed_in?
         .header__sub
           - @categories.each do |category|
