@@ -1,0 +1,24 @@
+.search-title
+  ユーザー検索
+
+= search_form_for(@q, url: search_path) do |f|
+  .search-content
+    .search-field
+      = f.label :nickname_cont, 'ユーザー名'
+      %br
+      = f.search_field :nickname_cont
+    
+    .search-field
+      %p 性別
+      - User.sexes.each do |i|
+        = f.check_box :sex_eq, {multiple: true}, i[1], nil
+        = f.label :sex_eq, i[0]
+    
+    .search-field
+      %p 都道府県
+      - User.addresses.each do |i|
+        = f.check_box :address_eq, {multiple: true}, i[1], nil
+        = f.label :address_eq, i[0]
+  
+    .search-field
+      = f.submit

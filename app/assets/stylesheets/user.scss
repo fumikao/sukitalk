@@ -1,6 +1,7 @@
 .user__name {
   display: flex;
   justify-content: space-between;
+  font-size: 20px;
   &--edit {
     font-size: 20px;
   }
@@ -38,4 +39,22 @@
   background: var(--color-yellow);
   border-radius: 20px;
   padding: 5px;
+}
+
+.search-title {
+  font-size: 20px;
+}
+
+.search-content {
+  margin-top: 10px;
+}
+
+.search-field {
+  margin-top: 10px;
+}
+
+.search-result {
+  margin-top: 10px;
+  padding: 5px;
+  border-bottom: 1px solid var(--color-green);
 }
