@@ -23,8 +23,6 @@
     background: var(--color-green);
     border-radius: 30px;
     padding: 10px;
-    a {
-    }
   }
 }
 
@@ -45,8 +43,11 @@
   }
 }
 
-.right-content {
-
+.right-conent__list {
+  display: flex;
+  .likes {
+    margin-left: 10px;
+  }
 }
 
 .sub-content {

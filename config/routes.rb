@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   end
   resources :talks, except: [:index, :new] do
     resources :comments, only: [:create, :edit, :update, :destroy]
+    resources :likes, only: [:create, :destroy]
   end
 
   post '/category_users' => "category_users#create"

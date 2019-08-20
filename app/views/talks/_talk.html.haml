@@ -8,8 +8,11 @@
         = simple_format(talk.content)
   .right-content
     .right-content__head
-      = talk.created_at.strftime("%Y/%m/%-d %-H:%M")
+      = talk.created_at.strftime("%Y/%m/%-d %H:%M")
     .right-conent__list
-      = icon 'far', 'comment'
-      = talk.comments.length
-      = icon 'fas', 'star'
+      .comments
+        = link_to talk_path(talk) do
+          = icon 'far', 'comment'
+        = talk.comments.length
+      .likes{id: "talk-" + talk.id.to_s}
+        = render partial: 'talks/like', locals: {talk: talk}
