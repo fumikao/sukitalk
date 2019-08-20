@@ -10,23 +10,30 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     %header
-      .title
-        = link_to "スキトーク！", root_path
+      .header__main
+        .title
+          = link_to "スキトーク！", root_path
+        - if user_signed_in?
+          .links
+            = link_to user_path(current_user) do
+              .links__link
+                = icon 'fas', 'user'
+            .links__link#new_talk
+              = icon 'fas', 'edit'
+        - else
+          .links
+            = link_to new_user_registration_path do
+              .links__link
+                %p 登録
+            = link_to new_user_session_path do
+              .links__link
+                %p login
       - if user_signed_in?
-        .links
-          = link_to user_path(current_user) do
-            .links__link
-              = icon 'fas', 'user'
-          .links__link#new_talk
-            = icon 'fas', 'edit'
-      - else
-        .links
-          = link_to new_user_registration_path do
-            .links__link
-              %p 登録
-          = link_to new_user_session_path do
-            .links__link
-              %p login
+        .header__sub
+          - @categories.each do |category|
+            .header__sub--list
+              = link_to category.name, category_talks_path(category)
+
     %main
       .container
         = yield
