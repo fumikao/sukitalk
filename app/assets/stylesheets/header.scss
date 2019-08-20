@@ -1,12 +1,24 @@
 header {
   width: 100vw;
-  height: 70px;
   background: var(--color-pink);
-  display: flex;
-  justify-content: center;
   position: fixed;
   z-index: 1;
 }
+
+.header__main {
+  display: flex;
+  justify-content: center;
+}
+
+.header__sub {
+  display: flex;
+  justify-content: center;
+  &--list {
+    margin: 5px;
+  }
+}
+
+
 
 .title {
   margin: 0 10px;
@@ -39,7 +51,7 @@ header {
 
 main {
   min-height: 100vh;
-  padding-top: 70px;
+  padding-top: 100px;
   background: rgba(246,194,194,0.1);
 }
 
