@@ -2,6 +2,8 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :setting_modal_new
   before_action :show_categories
+
+  include UserHelper
   
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :birthday, :address, :sex, :profile])

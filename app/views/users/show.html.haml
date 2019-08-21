@@ -14,7 +14,7 @@
     = @user.sex
     \/
   - if @user.birthday
-    = birthday_to_age(@user.birthday)
+    = show_age(@user.birthday)
     \/
   - if @user.address
     = @user.address
