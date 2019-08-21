@@ -18,8 +18,6 @@ header {
   }
 }
 
-
-
 .title {
   margin: 0 10px;
   line-height: 70px;
@@ -46,6 +44,16 @@ header {
   }
   i, p {
     line-height: 50px;
+  }
+}
+
+#search_links {
+  width: 120px;
+  li {
+    background: var(--color-yellow);
+    border-radius: 30px;
+    padding: 5px;
+    margin-bottom: 5px;
   }
 }
 
