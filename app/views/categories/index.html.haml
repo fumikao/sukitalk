@@ -1,0 +1,9 @@
+.search-title
+  カテゴリー検索
+
+= form_with url: search_categories_path, method: :get, local: true do |f|
+  .search-content
+    .search-field
+      = f.text_field :name
+    .search-field
+      = f.submit "検索"

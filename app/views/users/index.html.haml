@@ -1,7 +1,7 @@
 .search-title
   ユーザー検索
 
-= search_form_for(@q, url: search_path) do |f|
+= search_form_for(@q, url: search_users_path) do |f|
   .search-content
     .search-field
       = f.label :nickname_cont, 'ユーザー名'

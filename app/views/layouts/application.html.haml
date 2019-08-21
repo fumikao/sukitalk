@@ -20,9 +20,6 @@
                 = icon 'fas', 'user'
             .links__link#new_talk
               = icon 'fas', 'edit'
-            = link_to users_path do
-              .links__link
-                = icon 'fas', 'search'
         - else
           .links
             = link_to new_user_registration_path do
@@ -31,9 +28,11 @@
             = link_to new_user_session_path do
               .links__link
                 %p login
-            = link_to users_path do
-              .links__link
-                = icon 'fas', 'search'
+        .links__link#search_icon
+          = icon 'fas', 'search'
+          %ul#search_links.display_none
+            %li= link_to "ユーザー検索", users_path
+            %li= link_to "カテゴリ検索", categories_path
       - if user_signed_in?
         .header__sub
           - @categories.each do |category|
