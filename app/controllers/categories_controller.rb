@@ -1,8 +1,7 @@
 class CategoriesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:index, :search]
 
   def index
-    
   end
   
   def create
