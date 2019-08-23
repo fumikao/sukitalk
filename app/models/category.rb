@@ -4,6 +4,5 @@ class Category < ApplicationRecord
   has_many :users, through: :category_users
   has_many :category_users, dependent: :destroy
 
-  validates :name, presence: true
-  validates :genre_id, presence: true
+  validates :name, presence: true, length: { maximum: 20 }
 end
