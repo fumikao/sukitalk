@@ -5,5 +5,4 @@ class Category < ApplicationRecord
   has_many :category_users, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 20 }
-  validates :genre_id, presence: true
 end
