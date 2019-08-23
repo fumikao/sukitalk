@@ -26,12 +26,12 @@
   .top-group__index--choose
     .top-new-genre
       .contents-title ジャンルから作る！
-      = form_for @genre do |f|
+      = form_with model: @genre, local: true do |f|
         = f.label "(1)ジャンル作成"
         %br
         = f.text_field :name, placeholder: "ジャンル名", class: "input-text"
         = f.submit "＋", class: "input-submit"
-      = form_for @category do |f|
+      = form_with model: @category, local: true do |f|
         = f.label "(2)ジャンル選択"
         %br
         = f.collection_select :genre_id, @genres, :id, :name, {prompt: '---'}
@@ -42,7 +42,7 @@
         = f.submit "＋", class: "input-submit"
     .top-new-category
       .contents-title カテゴリーを作る！
-      = form_for @category do |f|
+      = form_with model: @category, local: true do |f|
         = f.label "(1)ジャンル選択"
         %br
         = f.collection_select :genre_id, @genres, :id, :name, {prompt: '---'}
