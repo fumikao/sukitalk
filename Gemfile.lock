@@ -89,6 +89,11 @@ GEM
     erubi (1.8.0)
     erubis (2.7.0)
     execjs (2.7.0)
+    factory_bot (5.0.2)
+      activesupport (>= 4.2.0)
+    factory_bot_rails (5.0.2)
+      factory_bot (~> 5.0.2)
+      railties (>= 4.2.0)
     ffi (1.11.1)
     font-awesome-sass (5.3.1)
       sassc (>= 1.11)
@@ -283,6 +288,7 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise
+  factory_bot_rails
   font-awesome-sass
   gon
   haml-rails
