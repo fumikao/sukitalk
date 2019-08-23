@@ -1,19 +1,20 @@
 %h2 Sign up
 = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
   
   .field
     %em 必須
     = f.label :nickname
     %br/
     = f.text_field :nickname, autofocus: true
+    = @user.errors.full_messages_for(:nickname)[0]
   
   .field
     %em 必須
     = f.label :email
     %br/
     = f.email_field :email, autofocus: true, autocomplete: "email"
-  
+    = @user.errors.full_messages_for(:email)[0]
+
   .field
     %em 必須
     = f.label :password
@@ -22,13 +23,15 @@
         (#{@minimum_password_length}文字以上)
     %br/
     = f.password_field :password, autocomplete: "new-password"
-  
+    = @user.errors.full_messages_for(:password)[0]
+
   .field
     %em 必須
     = f.label :password_confirmation
     %br/
     = f.password_field :password_confirmation, autocomplete: "new-password"
-  
+    = @user.errors.full_messages_for(:password_confirmation)[0]
+
   .field
     = f.label :profile
     %br/

@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :display_error_messages, only: :new, if: :devise_controller?
   before_action :setting_modal_new
   before_action :show_categories
 
@@ -16,6 +17,10 @@ class ApplicationController < ActionController::Base
 
   def after_sign_out_path_for(resource)
     root_path
+  end
+
+  def display_error_messages
+    @user = User.new
   end
 
   def setting_modal_new
