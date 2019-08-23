@@ -35,8 +35,12 @@
 
 .left-content {
   &__head {
-    display: flex;
-    justify-content: space-between;
+    ul {
+      display: flex;
+      li {
+        margin-right: 20px;
+      }
+    }
   }
   &__text {
     margin-top: 5px;

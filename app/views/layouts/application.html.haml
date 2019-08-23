@@ -18,7 +18,7 @@
             = link_to user_path(current_user) do
               .links__link
                 = icon 'fas', 'user'
-            .links__link#new_talk
+            .links__link.new_talk_btn
               = icon 'fas', 'edit'
         - else
           .links

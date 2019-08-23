@@ -11,6 +11,12 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    redirect_to talk_path(@comment.talk)
+  end
+
   private
   def comment_params
     params.require(:comment).permit(:content).merge(talk_id: params[:talk_id])

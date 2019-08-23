@@ -1,5 +1,5 @@
 $(function(){
-  $('#new_talk').on('click', function(){
+  $('.new_talk_btn').on('click', function(){
     // TODO: スクロールできないようにしたい
     $('.shadow').removeClass('display_none')
     $('.new-talk').removeClass('display_none')

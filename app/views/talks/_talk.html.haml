@@ -1,8 +1,12 @@
 .talk-content
   .left-content
     .left-content__head
-      %p
-        = link_to talk.user.nickname, user_path(talk.user)
+      %ul
+        %li
+          = link_to talk.user.nickname, user_path(talk.user)
+        - if user_signed_in? && talk.user == current_user
+          %li
+            = link_to '削除', talk_path(talk), method: :delete, data: {confirm: "削除しますか？"}
     = link_to talk_path(talk) do
       .left-content__text
         = simple_format(talk.content)

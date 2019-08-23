@@ -20,6 +20,12 @@ class TalksController < ApplicationController
     @comment = Comment.new
   end
 
+  def destroy
+    @talk = Talk.find(params[:id])
+    @talk.destroy
+    redirect_to category_talks_path(@talk.category)
+  end
+
   private
 
   def talk_params
