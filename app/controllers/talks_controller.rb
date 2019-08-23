@@ -1,5 +1,5 @@
 class TalksController < ApplicationController
-  before_action :authenticate_user!, only: :create
+  before_action :authenticate_user!, only: [:create, :destroy]
 
   def index
     @category = Category.find(params[:category_id])
@@ -10,8 +10,6 @@ class TalksController < ApplicationController
     talk = current_user.talks.new(talk_params)
     if talk.save
       redirect_to category_talks_path(talk_params[:category_id])
-    else
-      render 'new'
     end
   end
 
