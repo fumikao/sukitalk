@@ -1,24 +1,40 @@
-# README
+スキトーク！
+====
+https://suki-talk.herokuapp.com/
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 概要
+自分の趣味に基づいてグループを作成し、スキなことをスキな人同士でスキなだけ語れるサービスです。
 
-Things you may want to cover:
+## 制作背景
+私は広く浅くたくさんの趣味があります。
+Twitterを主に利用して情報収拾や発信をしてきましたが、
+- Twitterでアカウントを分けるほど深くない
+- Twitterでリストを作成して管理するのは面倒
+- Twitterで検索をするとアンチの声が目に付く
+このような問題があり、モヤモヤしていました。
+そこで、特定のことについてスキな人だけでグループを作成し、話せたらいいなと思い、作成に至りました。
 
-* Ruby version
+## 機能
+- 新規登録・ログイン・ログアウト
+- ジャンル・カテゴリ作成
+- 既存グループへの参加/参加解除
+- トーク作成/削除
+- いいね
+- コメント
+- ユーザー一覧
+- 検索
+  - ユーザー検索
+  - ジャンル・カテゴリ検索
 
-* System dependencies
+## 今後実装したい機能
+- ユーザーフォロー機能
+- 画像投稿
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 使用技術
+- Ruby
+- Ruby on Rails
+- jQuery
+- MySQL(開発環境)
+- PostgreSQL(本番環境)
+- Heroku
